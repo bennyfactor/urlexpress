@@ -58,7 +58,10 @@ class lilURL
 		else // otherwise, put it in
 		{
 			$id = $this->get_next_id($this->get_last_id());
-			$q = 'INSERT INTO '.URL_TABLE.' (id, url, date) VALUES ("'.$id.'", "'.$url.'", NOW())';
+			if ( isset($_COOKIE["user"]) ) { $q = 'INSERT INTO '.URL_TABLE.' (id, url, date, user) VALUES ("'.$id.'", "'.$url.'", NOW(), "'.$_COOKIE["user"].'")'; }
+			else { 
+			$q = 'INSERT INTO '.URL_TABLE.' (id, url, date, ) VALUES ("'.$id.'", "'.$url.'", NOW())';
+			}
 
 			return mysql_query($q);
 		}

@@ -1,0 +1,29 @@
+<?php /* conf.php ( config file ) */
+
+// page title
+define('PAGE_TITLE', 'A URL Generator');
+
+//cookie values CHANGE THESE BEFORE INSTALLING
+$tokenname = "token" // name of auth token
+$tokenvalue = "value" // value of auth token
+$tokenvalue_stale = "stale" // stale token value, tells logged in users to get new cookies
+
+// MySQL connection info
+define('MYSQL_USER', 'CHANGEME');
+define('MYSQL_PASS', 'CHANGEME');
+define('MYSQL_DB', 'CHANGEME');
+define('MYSQL_HOST', 'CHANGEME'); //probably localhost
+
+// MySQL tables
+define('URL_TABLE', 'lil_urls');
+
+// use mod_rewrite?
+define('REWRITE', true);
+
+// allow urls that begin with these strings
+$allowed_protocols = array('http:', 'https:', 'mailto:');
+
+// uncomment the line below to skip the protocol check
+// $allowed_procotols = array();
+
+?>
