@@ -38,7 +38,7 @@ if ( isset($_POST['longurl']) )
 	{
 		if ( REWRITE ) // mod_rewrite style link
 		{
-			$url = 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF']).'/'.$lilurl->get_id($longurl);
+			$url = 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF']).$lilurl->get_id($longurl);
 		}
 		else // regular GET style link
 		{
@@ -53,7 +53,7 @@ if ( isset($_POST['longurl']) )
 	}
 	else
 	{
-		$msg = '<p class="error">Creation of your lil&#180; URL failed for some reason.</p>';
+		$msg = '<p class="error">ERROR 56: Creation of your short URL failed for some reason.</p>';
 	}
 }
 else // if the form hasn't been submitted, look for an id to redirect to
@@ -76,14 +76,47 @@ else // if the form hasn't been submitted, look for an id to redirect to
 	if ( $id != '' && $id != basename($_SERVER['PHP_SELF']) )
 	{
 		$location = $lilurl->get_url($id);
+//
+		// log the access
+				$time = date("M j G:i:s Y"); 
+				$ip = getenv('REMOTE_ADDR');
+				$userAgent = getenv('HTTP_USER_AGENT');
+				$referrer = getenv('HTTP_REFERER');
+				$query = getenv('QUERY_STRING');
+
+				//COMBINE VARS INTO OUR LOG ENTRY
+				$msg = "LILURL " . $id . " IP: " . $ip . " TIME: " . $time . " REFERRER: " . $referrer . " SEARCHSTRING: " . $query . " USERAGENT: " . $userAgent; 
+
+
+   					 $today = date("Y_m_d"); 
+				     $logfile = $today."_log.txt"; 
+				     $dir = 'logs';
+				     $saveLocation=$dir . '/' . $logfile;
+				     if (!$handle = @fopen($saveLocation, "a"))
+					     {
+				               exit;
+				         }
+				          else
+				          {
+				               if(@fwrite($handle,"$msg\r\n")===FALSE) 
+				               {
+				                    exit;
+				               }
+  
+				               @fclose($handle);
+				          }
+
+
+//
 		
 		if ( $location != -1 )
 		{
 			header('Location: '.$location);
+	
 		}
 		else
 		{
-			$msg = '<p class="error">Sorry, but that lil&#180; URL isn\'t in our database.</p>';
+			$msg = '<p class="error">ERROR 2393: URL NOT IN DATABASE.</p>';
 		}
 	}
 }
@@ -98,13 +131,13 @@ else // if the form hasn't been submitted, look for an id to redirect to
 <html>
 
 	<head>
-		<title>HarryJerry.com Linx Generator</title>
+		<title>IAATBExpress</title>
 		
 		<style type="text/css">
 		body {
-			font: .8em "Trebuchet MS", Verdana, Arial, Sans-Serif;
+			font: 1em Helvetica, Arial, Sans-Serif;
 			text-align: center;
-			color: #333;
+			color: #000;
 			background-color: #fff;
 			margin-top: 5em;
 		}
@@ -116,8 +149,7 @@ else // if the form hasn't been submitted, look for an id to redirect to
 		}
 
 		h4 {
-			font-size: 1em;
-			font-weight: bold;
+			display: none;
 		}
 		
 		form {
@@ -136,17 +168,17 @@ else // if the form hasn't been submitted, look for an id to redirect to
 		}
 		
 		a {
-			color: #09c;
+			color: #336699;
 			text-decoration: none;
 			font-weight: bold;
 		}
 
 		a:visited {
-			color: #07a;
+			color: #336699;
 		}
 
 		a:hover {
-			color: #c30;
+			color: #ea2001;
 		}
 
 		.error, .success {
@@ -155,11 +187,11 @@ else // if the form hasn't been submitted, look for an id to redirect to
 		}
 		
 		.error {
-			color: #ff0000;
+			color: #ea2001;
 		}
 		
 		.success {
-			color: #000;
+			color: #99ccff;
 		}
 		
 		</style>
@@ -167,20 +199,28 @@ else // if the form hasn't been submitted, look for an id to redirect to
 	</head>
 	
 	<body onload="document.getElementById('longurl').focus()">
-		
-		<h1>HarryJerry URL Generator</h1>
-		
+		<img src="iaatblarge.png" />
+		<h1>IAATBExpress URL generator</h1>
+		The official URL shortener of <a href="http://iaatb.net">iaatb.net</a>
+		<br /><br />
 		<?php echo $msg; ?>
-		
-		<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
+		<?php
+		if ($_COOKIE["rofflecopter"] == "furgerblaph")
+		echo "EWWW STALE COOKIES. GO GET SOME FRESH ONES FROM MOMMA!";
+		if ($_COOKIE["rofflecopter"] == "lollercoaster")
+  		echo "<form action=\"". $_SERVER['PHP_SELF'] . "\" method=\"post\">
 		
 			<fieldset>
-				<label for="longurl">Enter a long URL:</label>
-				<input type="text" name="longurl" id="longurl" />
-				<input type="submit" name="submit" id="submit" value="Make it sexy!" />
+				<label for=\"longurl\">Enter a long URL:</label>
+				<input type=\"text\" name=\"longurl\" id=\"longurl\" />
+				<input type=\"submit\" name=\"submit\" id=\"submit\" value=\"SHORTEN\" />
 			</fieldset>
 		
-		</form>
+		</form>";
+else
+  echo "<br />";
+?>
+		
 
 		<h4>Powered by <a href="http://harryjerry.com">HarryJerry.com</a></h4>
 	
