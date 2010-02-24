@@ -131,7 +131,7 @@ else // if the form hasn't been submitted, look for an id to redirect to
 <html>
 
 	<head>
-		<title>IAATBExpress</title>
+		<title><?php echo PAGE_TITLE ; ?></title>
 		
 		<style type="text/css">
 		body {
@@ -199,9 +199,9 @@ else // if the form hasn't been submitted, look for an id to redirect to
 	</head>
 	
 	<body onload="document.getElementById('longurl').focus()">
-		<img src="iaatblarge.png" />
-		<h1>IAATBExpress URL generator</h1>
-		The official URL shortener of <a href="http://iaatb.net">iaatb.net</a>
+		<img src="<?php echo $banner ?>" />
+		<h1><?php echo $heading; ?></h1>
+		<?php echo $tagline; ?>
 		<br /><br />
 		<?php echo $msg; ?>
 		<?php
@@ -222,7 +222,7 @@ else
 ?>
 		
 
-		<h4>Powered by <a href="http://harryjerry.com">HarryJerry.com</a></h4>
+		<h4>Powered by URLExpress</h4>
 	
 	</body>
 

@@ -2,6 +2,13 @@
 
 // page title
 define('PAGE_TITLE', 'A URL Generator');
+// page banner image URL
+$banner = 'EXAMPLE.JPG';
+// page heading
+$heading = 'EXAMPLE HEADING';
+// page tagline
+$tagline = 'OFFICIAL SHORTENISTS BY APPOINTMENT TO THE QUEEN OF MySQL';
+
 
 //cookie values CHANGE THESE BEFORE INSTALLING
 $tokenname = "token" // name of auth token
