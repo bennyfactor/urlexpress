@@ -46,6 +46,33 @@ if ( isset($_POST['longurl']) )
 		}
 
 		$msg = '<p class="success">URL is: <a href="'.$url.'">'.$url.'</a></p>';
+		$msg = '<p class="success">URL is: <a href="'.$url.'">'.$url.'</a><br /><input type="text" id="copybox" value="'.$url.'" onselect="select_text();" onkeyup="select_text();" onclick="select_text();" readonly="readonly"/> <br />ready to be copied to your clipboard</p>
+				<script language="JavaScript" type="text/javascript">
+					<!--
+						function select_text()
+							{
+						el = document.getElementById(\'copybox\');
+						if (el.createTextRange) 
+						{
+							var oRange = el.createTextRange();
+					   		oRange.moveStart("character", 0);
+							oRange.moveEnd("character", el.value.length);
+							oRange.select();
+						}
+						else if (el.setSelectionRange) 
+						{
+							el.setSelectionRange(0, el.value.length);
+						}
+						el.focus();
+					}
+				
+					function PageInit() {
+						select_text();
+					}
+				        window.onload = PageInit;
+
+					//-->
+				</script>';
 	}
 	elseif ( !$protocol_ok )
 	{
