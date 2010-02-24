@@ -80,7 +80,7 @@ if ( isset($_POST['longurl']) )
 	}
 	else
 	{
-		$msg = '<p class="error">ERROR 56: Creation of your short URL failed for some reason.</p>';
+		$msg = '<p class="error">ERROR '.__LINE__.': Creation of your short URL failed for some reason.</p>';
 	}
 }
 else // if the form hasn't been submitted, look for an id to redirect to
