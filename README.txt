@@ -16,7 +16,7 @@ How to install?
 4. Benny Moto pro racer tip: Customize! GO KICKY FAST OKAY
 4. Save it as includes/conf.php
 4. Import/Dump the contents of database.sql file using phpMyAdmin (if available). This is to create the database tables.
-6. set an .htpasswrd file for the cookies/ directory. An example for how to do this (on dreamhost) is listed here: 
+6. set an .htpasswrd file for the cookies/ directory. An example for how to do this (on dreamhost) is listed here: http://wiki.dreamhost.com/Password-protecting_directories#Using_.htaccess
 
 ------------------------
 
