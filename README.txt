@@ -1,38 +1,33 @@
-HarryJerry Linx!
-
+URLExpress
 ----------------------
 
-This little script will let you run your own URL shortening service like TinyURL etc.
-//Uses a GNU class with some modifications
+All the fun of bit.ly without unwittingly supporting Gaddafi, right on your own webserver. Based on linx which was based on lilURL. 
 
-License: GNU
+License: GPL3
 
-Free to modify, redistribute.
+Free to modify, redistribute or whatever it is Richard Stallman wants.
 ----------------------
 
 How to install?
 
 1. Extract the contents of this compressed file into a folder and upload to your server.
 2. Create a MySQL database and a user.
-3. Open includes/conf.php and edit the database name and user/password as per step 2.
+3. Open includes/conf.php.example and edit the database name and user/password as per step 2.
+4. Benny Moto pro racer tip: Customize! GO KICKY FAST OKAY
+4. Save it as includes/conf.php
 4. Import/Dump the contents of database.sql file using phpMyAdmin (if available). This is to create the database tables.
-5. Buy me a chocolate brownie or this script won't work (just kidding).
-6. Customize your site name in index.php and spice up the page.
+6. set an .htpasswrd file for the cookies/ directory. An example for how to do this (on dreamhost) is listed here: 
 
 ------------------------
 
-I need help!!!!
+I need help!
 
+Too bad.
 
-Support will be available online through web/e-mail. I can also install the script for you if you want me to. It's free of course! :)
+No I mean really, this is essentially pre-alpha (pre-aleph in neuflang). Someday there will be more polished directions,
+until then you can use the github project tools to get in contact or whatever.
 
-Please feel free to mail me at harryjerry22@gmail.com
-
-I'm on Twitter too: harry_jerry
-
-I normally respond within 6 hours and maximum in 12 hours.
-
-
+AS IS, WHERE IS, NO WARRANTY EXPRESSED OR IMPLIED, VOID WHERE PROHIBITED BY LAW, DO NOT EXPORT TO CUBA, FAHV HUNNERT HORSEPOW'R.
 ------------------------
 
-www.harryjerry.com
+www.iaatb.net
