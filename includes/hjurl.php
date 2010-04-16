@@ -158,12 +158,20 @@ class lilURL
 			}
 			else // if we're at 9, it's time to move to the alphabet
 			{
-				$new_char = 'a';
+				$new_char = 'A';
 			}
 		}
 		else // move it up the alphabet
 		{
-			$new_char = chr(ord($char) + 1);
+			//ANSI put [\]^_` between A-Z&a-z in the 60s, thanks for 40 years of exception handling!
+			if ( ord($char) == 90) //Rollover from uppercase Z to lowercase a
+			{
+				$new_char = 'a'; 
+			}
+			elseif ( ord($char) != 90 )
+			{
+				$new_char = chr(ord($char) + 1);
+			}
 		}
 
 		$id[$pos] = $new_char;
