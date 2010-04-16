@@ -20,6 +20,20 @@ How to install?
 
 ------------------------
 
+How to upgrade
+
+1. Just stage the new commit into your production directory. It's that easy.
+ None of your config files or users or SQL db will be overwritten, promise.
+
+UPGRADING FROM COMMIT f8a313eef8372caf6e550350283cd770460e59ce(1002.27) & EARIER
+
+Make sure to change the collate for the sql field 'id' to utf_bin from 
+utf_general_ci. This will allow you to make use of the new case-sensitive URLs.
+(If you don't, you'll just get uppercase URLs from now on. Weird huh?)
+
+
+
+------------------------
 I need help!
 
 Too bad.
