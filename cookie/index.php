@@ -19,5 +19,7 @@ setcookie("user", $_SERVER['REMOTE_USER'], time()+60*60*24*$sell-by, "/" );
 <h1 >I'MMA BAKING SOME COOKIES</h1>
 It's security through obscurity so don't give your cookies to strangers,  <?php echo $_SERVER['REMOTE_USER']; ?>!
 Lalalalalalalalaaaaa~~~~~~~~~
+<br /><br />
+These cookies expire <?php date('Y-m-d', time()+60*60*24*$sell-by); ?>
 </body>
 </html>
