@@ -1,6 +1,6 @@
 <?php
-setcookie("rofflecopter", "lollercoaster", 0, "/" );
-setcookie("user", $_SERVER['REMOTE_USER'], 0, "/" );
+setcookie("rofflecopter", "lollercoaster", time()+60*60*24*30, "/" );
+setcookie("user", $_SERVER['REMOTE_USER'], time()+60*60*24*30, "/" );
 ?>
 <html>
 <head>
