@@ -1,7 +1,7 @@
 <?php /* index.php ( lilURL implementation ) */
 
 require_once 'includes/conf.php'; // <- site-specific settings
-require_once 'includes/hjurl.php'; // <- lilURL class file
+require_once 'includes/urlcodec.php'; // <- lilURL class file
 
 $lilurl = new lilURL();
 $msg = '';
