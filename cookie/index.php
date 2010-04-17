@@ -1,18 +1,25 @@
 <?php
 require_once '../includes/conf.php'; // <- site-specific settings
-setcookie("rofflecopter", "lollercoaster", time()+60*60*24*$sell-by, "/" );
-setcookie("user", $_SERVER['REMOTE_USER'], time()+60*60*24*$sell-by, "/" );
+$expire =  time() + (60 * 60 * 24 * $sell-by);
+
+setcookie("rofflecopter", "lollercoaster", $expire, "/" );
+setcookie("user", $_SERVER['REMOTE_USER'], $expire, "/" );
 ?>
 <html>
 <head>
 		<style type="text/css">
 		body {
-			font: 1em Helvetica, Arial, Sans-Serif;
+			font: 1em <?php echo $face; ?>;
 			text-align: center;
-			color: #000;
-			background-color: #fff;
+			color: <?php echo $textcolor; ?>;
+			background-color: <?php echo $bkg; ?>;
 			margin-top: 5em;
 		}
+		
+		.date {
+			color: <?php echo $warning; ?>;
+		}
+			
 		</style>
 </head>
 <body>
@@ -20,6 +27,7 @@ setcookie("user", $_SERVER['REMOTE_USER'], time()+60*60*24*$sell-by, "/" );
 It's security through obscurity so don't give your cookies to strangers,  <?php echo $_SERVER['REMOTE_USER']; ?>!
 Lalalalalalalalaaaaa~~~~~~~~~
 <br /><br />
-These cookies expire <?php date('Y-m-d', time()+60*60*24*$sell-by); ?>
+These cookies expire <span class="date"<?php echo date('ym.j H:i:s', $expire);?></span>  (<?php echo $sell-by; ?> days from now)
 </body>
 </html>
+

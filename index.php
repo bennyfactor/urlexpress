@@ -162,10 +162,10 @@ else // if the form hasn't been submitted, look for an id to redirect to
 		
 		<style type="text/css">
 		body {
-			font: 1em Helvetica, Arial, Sans-Serif;
+			font: 1em <?php echo $face; ?>;
 			text-align: center;
-			color: #000;
-			background-color: #fff;
+			color: <?php echo $textcolor; ?>;
+			background-color: <?php echo $bkg; ?>;
 			margin-top: 5em;
 		}
 		
@@ -181,8 +181,8 @@ else // if the form hasn't been submitted, look for an id to redirect to
 		
 		form {
 			width: 28em;
-			background-color: #eee;
-			border: 1px solid #ccc;
+			background-color: <?php echo $formbkg; ?>;
+			border: 1px solid <?php echo $border; ?>;
 			margin-left: auto;
 			margin-right: auto;
 			padding: 1em;
@@ -195,17 +195,17 @@ else // if the form hasn't been submitted, look for an id to redirect to
 		}
 		
 		a {
-			color: #336699;
+			color: <?php echo $link; ?>;
 			text-decoration: none;
 			font-weight: bold;
 		}
 
 		a:visited {
-			color: #336699;
+			color: <?php echo $link; ?>;
 		}
 
 		a:hover {
-			color: #ea2001;
+			color: <?php echo $link; ?>;
 		}
 
 		.error, .success {
@@ -214,11 +214,11 @@ else // if the form hasn't been submitted, look for an id to redirect to
 		}
 		
 		.error {
-			color: #ea2001;
+			color: <?php echo $warning; ?>;
 		}
 		
 		.success {
-			color: #99ccff;
+			color: <?php echo $notice; ?>;
 		}
 		
 		</style>

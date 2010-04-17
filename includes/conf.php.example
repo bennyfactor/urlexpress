@@ -1,19 +1,17 @@
 <?php /* conf.php ( config file ) */
 
-// page title
-define('PAGE_TITLE', 'A URL Generator');
-// page banner image URL
-$banner = 'EXAMPLE.JPG';
-// page heading
-$heading = 'EXAMPLE HEADING';
-// page tagline
-$tagline = 'OFFICIAL SHORTENISTS BY APPOINTMENT TO THE QUEEN OF MySQL';
-
+/* Authentication */
 
 //cookie values CHANGE THESE BEFORE INSTALLING
 $tokenname = "token" // name of auth token
 $tokenvalue = "value" // value of auth token
 $tokenvalue_stale = "stale" // stale token value, tells logged in users to get new cookies
+$sell-by = "30" //number of days before cookies expire. 
+
+/* end of authentication */
+
+
+/* Database */
 
 // MySQL connection info
 define('MYSQL_USER', 'CHANGEME');
@@ -24,13 +22,57 @@ define('MYSQL_HOST', 'CHANGEME'); //probably localhost
 // MySQL tables
 define('URL_TABLE', 'lil_urls');
 
+/* end of database */
+
+
+/* Page appearance */
+
+// page title
+define('PAGE_TITLE', 'A URL Generator');
+// page banner image URL
+$banner = 'EXAMPLE.JPG';
+// page heading
+$heading = 'EXAMPLE HEADING';
+// page tagline
+$tagline = 'OFFICIAL SHORTENISTS BY APPOINTMENT TO THE QUEEN OF MySQL';
+
 // use mod_rewrite?
 define('REWRITE', true);
+
+//page colors, either use html color names or hexcodes;
+//background color
+$bkg = "white";
+//text color
+$textcolor = "black";
+//link color
+$link = "blue";
+//notice text color
+$notice = "aqua";
+//warning text color
+$warning = "green";
+//form background color
+$formbkg = "#eeeeee";
+//border color
+$border = "#cccccc";
+
+//typeface options
+//font face
+$face = "Helvetica, Arial, Sans-Serif";
+
+//timestamp options, see php documentation for date();
+$timestamp = "D M j G:i:s T Y";
+
+/* end of page appearance */
+
+
+/* URL settings */
 
 // allow urls that begin with these strings
 $allowed_protocols = array('http:', 'https:', 'mailto:');
 
 // uncomment the line below to skip the protocol check
 // $allowed_procotols = array();
+
+/*end of long URL settings */
 
 ?>
