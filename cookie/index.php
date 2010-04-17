@@ -18,6 +18,7 @@ setcookie("user", $_SERVER['REMOTE_USER'], $expire, "/" );
 		
 		.date {
 			color: <?php echo $warning; ?>;
+			font-weight: 400;
 		}
 			
 		</style>
@@ -27,7 +28,7 @@ setcookie("user", $_SERVER['REMOTE_USER'], $expire, "/" );
 It's security through obscurity so don't give your cookies to strangers,  <?php echo $_SERVER['REMOTE_USER']; ?>!
 Lalalalalalalalaaaaa~~~~~~~~~
 <br /><br />
-These cookies expire <span class="date"<?php echo date('ym.j H:i:s', $expire);?></span>  (<?php echo $sellby; ?> days from now)
+These cookies expire <span class="date"><?php echo date('ym.j H:i:s', $expire);?></span>  (<?php echo $sellby; ?> days from now)
 </body>
 </html>
 
