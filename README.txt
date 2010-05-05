@@ -9,7 +9,7 @@ Free to modify, redistribute or whatever it is Richard Stallman wants.
 
 ----------------------
 
-Version 1.0 Aleph-1 RELEASE "enormous mongoose andy jackson"
+Version 1.0 Aleph-1-CURRENT (git)
 ----------------------
 
 How to install:

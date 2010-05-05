@@ -18,7 +18,7 @@ setcookie("user", $_SERVER['REMOTE_USER'], $expire, "/" );
 		
 		.date {
 			color: <?php echo $warning; ?>;
-			font-weight: 400;
+			font-weight: bold;
 		}
 			
 		</style>
