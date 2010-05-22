@@ -159,7 +159,7 @@ else // if the form hasn't been submitted, look for an id to redirect to
 
 	<head>
 		<title><?php echo PAGE_TITLE ; ?></title>
-		<link rel="stylesheet" href="include/style.css.php" type="text/css" media="screen" />
+		<link rel="stylesheet" href="style/style.css.php" type="text/css" media="screen" />
 	
 
 	</head>

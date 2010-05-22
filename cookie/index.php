@@ -7,7 +7,7 @@ setcookie("user", $_SERVER['REMOTE_USER'], $expire, "/" );
 ?>
 <html>
 <head>
-	<link rel="stylesheet" href="include/style.css.php" type="text/css" media="screen" />	
+	<link rel="stylesheet" href="/style/style.css.php" type="text/css" media="screen" />	
 </head>
 <body>
 <h1 >I'MMA BAKING SOME COOKIES</h1>
