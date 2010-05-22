@@ -7,21 +7,7 @@ setcookie("user", $_SERVER['REMOTE_USER'], $expire, "/" );
 ?>
 <html>
 <head>
-		<style type="text/css">
-		body {
-			font: 1em <?php echo $face; ?>;
-			text-align: center;
-			color: <?php echo $textcolor; ?>;
-			background-color: <?php echo $bkg; ?>;
-			margin-top: 5em;
-		}
-		
-		.date {
-			color: <?php echo $warning; ?>;
-			font-weight: bold;
-		}
-			
-		</style>
+	<link rel="stylesheet" href="include/style.css.php" type="text/css" media="screen" />	
 </head>
 <body>
 <h1 >I'MMA BAKING SOME COOKIES</h1>
