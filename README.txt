@@ -3,13 +3,13 @@ URLExpress
 
 All the fun of bit.ly without unwittingly supporting Gaddafi, right on your own webserver. Based on linx which was based on lilURL. 
 
-License: GPL3
+License: GPL3 (see below)
 
 Free to modify, redistribute or whatever it is Richard Stallman wants.
 
 ----------------------
 
-Version 1.0 Aleph-1-CURRENT (git)
+Version 1.0 Aleph-2 RELEASE "screaming babies in mozart wigs"
 ----------------------
 
 How to install:
@@ -45,17 +45,43 @@ UPGRADING FROM COMMIT f8a313eef8372caf6e550350283cd770460e59ce(1002.27) & EARIER
 Make sure to change the collate for the sql field 'id' to utf_bin from utf_general_ci. This will allow you to make use of the new case-sensitive URLs.
 (If you don't, you'll just get uppercase URLs from now on. Weird huh?)
 
+------------------------
 
+Version history:
+
+1.0a2 ("screaming babies in mozart wigs")
+	Removal of CSS from inline to its own file, minor code improvements.
+
+1.0a1 ("enormous mongoose andy jackson")
+	Initial public release, containing all of the bare minimum URLExpress goodies.
 
 ------------------------
 
-I need help!
+Further help:
 
 If you've followed this readme and still are having problems, feel free to lodge a trouble ticket:
 http://github.com/bennyfactor/urlexpress/issues
 
+------------------------
 
-AS IS, WHERE IS, NO WARRANTY EXPRESSED OR IMPLIED, VOID WHERE PROHIBITED BY LAW, DO NOT EXPORT TO CUBA, FAHV HUNNERT HORSEPOW'R.
+LICENSE
+
+This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+In short:
+
+AS IS, WHERE IS, NO WARRANTY EXPRESSED OR IMPLIED, OFFER VOID WHERE PROHIBITED BY LAW, DO NOT EXPORT TO CUBA, FAHV HUNNERT HORSEPOW'R.
 
 ------------------------
 
